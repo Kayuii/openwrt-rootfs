@@ -28,5 +28,6 @@ jobs:
         username: kayuii
         password: ${{ secrets.DOCKERHUB_ACCESSTOKEN }}
     - name: Build the Docker image
-      env: DOCKER_CLI_EXPERIMENTAL=enabled
+      with:
+        env: DOCKER_CLI_EXPERIMENTAL=enabled
       run: sh update_openwrt_rootfs.sh
