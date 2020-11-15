@@ -1,7 +1,7 @@
 
 name: Docker Image CI
-env: 
-  DOCKER_CLI_EXPERIMENTAL: enabled
+# env: 
+#   DOCKER_CLI_EXPERIMENTAL: enabled
 on:
   push:
     branches: [ main ]
