@@ -1,0 +1,23 @@
+
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: kayuii
+        password: ${{ secrets.DOCKERHUB_ACCESSTOKEN }}
+    - name: Build the Docker image
+      run: wget -O- https://gist.githubusercontent.com/Kayuii/041c552e4d64e7de5658c0149ab193e7/raw/678c6ee3a91b66eca30d76a2819c15125720f475/update_openwrt_rootfs.sh | sh
